@@ -1,0 +1,21 @@
+{
+  "name": "geng-leetcoder",
+  "version": "0.1.0",
+  "description": "小耿用来辅助刷题的工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "geng-leetcoder": "./src/main.js",
+    "glc": "./src/main.js"
+  },
+  "keywords": [
+    "leecode"
+  ],
+  "author": "gengwenhao",
+  "license": "MIT",
+  "devDependencies": {
+    "commander": "^11.0.0"
+  }
+}
