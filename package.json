@@ -16,6 +16,7 @@
   "author": "gengwenhao",
   "license": "MIT",
   "devDependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "selenium-webdriver": "^4.10.0"
   }
 }
