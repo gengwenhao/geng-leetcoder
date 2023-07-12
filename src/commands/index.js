@@ -1,7 +1,7 @@
-const init = require('./init')
-const get = require('./get')
+import init from './init/index.js'
+import get from './get/index.js'
 
-module.exports = {
+export default {
   init,
   get
 }

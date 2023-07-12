@@ -1,6 +1,6 @@
-const {spawn} = require('child_process')
+import {spawn} from 'child_process'
 
-const gitClone = (url, localPath, showTips = true) => {
+export const gitClone = (url, localPath, showTips = true) => {
   return new Promise((resolve) => {
     const git = spawn('git', ['clone', url, localPath])
 
@@ -26,4 +26,3 @@ const gitClone = (url, localPath, showTips = true) => {
 // Usage:
 // gitClone('https://github.com/xxx/xxx.git', './test/path');
 
-module.exports = gitClone

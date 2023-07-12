@@ -1,4 +1,4 @@
-const fs = require('fs')
+import * as fs from 'fs'
 
 const excludes = [
   '评论',
@@ -11,7 +11,7 @@ const excludes = [
   '相似题目'
 ]
 
-function saveCode({title, desc, code, codeId = 'spe'}) {
+export default function saveCode({title, desc, code, codeId = 'spe'}) {
   const dirName = `exercise${codeId}`
   const fileName = `main.js`
   const explain = desc
@@ -32,4 +32,3 @@ function saveCode({title, desc, code, codeId = 'spe'}) {
   }
 }
 
-module.exports = saveCode

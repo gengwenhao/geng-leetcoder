@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-const {program} = require('commander')
-const commands = require('./commands')
+import {program} from 'commander'
+import commands from './commands/index.js'
 
 program
   .name('小耿 leetcode 辅助刷题CLI工具')
-  .version('0.1.3')
+  .version('0.1.4')
 
 // mount commands
 Object

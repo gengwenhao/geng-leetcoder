@@ -1,11 +1,15 @@
-const chrome = require('selenium-webdriver/chrome')
-const {Builder, By, Browser, until} = require('selenium-webdriver')
-const saveCode = require('./save-code')
+import {Builder, By, until} from 'selenium-webdriver'
+import chrome from 'selenium-webdriver/chrome.js'
+import saveCode from './save-code.js'
 
-async function crawlLeetcode(codeOrName) {
-  // const driver = await new Builder().forBrowser(Browser.CHROME).build()
-  const options = new chrome.Options().headless()
-  const driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build()
+export default async function crawlLeetcode(codeOrName) {
+
+  // 配置 selenium
+  const options = new chrome.Options()
+  options.excludeSwitches('enable-logging')
+
+  // 实例化 driver
+  const driver = await new Builder().forBrowser('chrome').setChromeOptions(options.headless()).build()
 
   try {
     // 请求页面
@@ -44,10 +48,14 @@ async function crawlLeetcode(codeOrName) {
     const codeId = title.split('.')[0]
 
     // save code file
-    saveCode({title, desc, code, codeId})
+    const data = {title, desc, code, codeId}
+    saveCode(data)
+
+    return data
   } finally {
     await driver.quit()
   }
+
+  return {}
 }
 
-module.exports = crawlLeetcode

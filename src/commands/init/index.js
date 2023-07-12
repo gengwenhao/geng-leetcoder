@@ -1,7 +1,7 @@
 // 提交代码
-const gitClone = require('../../utils/git-clone')
+import {gitClone} from '../../utils/git-clone.js'
 
-module.exports = function (program) {
+export default function (program) {
   program
     .command('init')
     .description('建立本地代码练习项目')
