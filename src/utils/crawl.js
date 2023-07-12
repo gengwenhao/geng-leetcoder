@@ -1,6 +1,7 @@
 import {Builder, By, until} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import saveCode from './save-code.js'
+import('chromedriver')
 
 export default async function crawlLeetcode(codeOrName) {
 
@@ -9,7 +10,10 @@ export default async function crawlLeetcode(codeOrName) {
   options.excludeSwitches('enable-logging')
 
   // 实例化 driver
-  const driver = await new Builder().forBrowser('chrome').setChromeOptions(options.headless()).build()
+  const driver = await new Builder()
+    .forBrowser('chrome')
+    .setChromeOptions(options.headless())
+    .build()
 
   try {
     // 请求页面
