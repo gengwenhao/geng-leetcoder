@@ -1,6 +1,6 @@
 {
   "name": "geng-leetcoder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "小耿用来辅助刷题的工具",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   ],
   "author": "gengwenhao",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "commander": "^11.0.0",
     "selenium-webdriver": "^4.10.0"
   }
