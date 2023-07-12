@@ -9,9 +9,9 @@ export default function (program) {
     .command('get <code_or_name>')
     .description('根据 leetcode 题号或名称，获取代码')
     .action((codeOrName) => {
-      const spinner = ora('获取题目内容').start()
+      const spinner = ora('获取题目内容...').start()
       crawlLeetcode(codeOrName).then(({title = ''}) => {
-        spinner.succeed('保存成功')
+        spinner.succeed('获取完成')
         console.log(chalk.bgGreenBright.bold(`${logSymbols.success} ${title} `))
       })
     })
