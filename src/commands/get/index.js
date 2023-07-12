@@ -10,9 +10,13 @@ export default function (program) {
     .description('根据 leetcode 题号或名称，获取代码')
     .action((codeOrName) => {
       const spinner = ora('获取题目内容...').start()
-      crawlLeetcode(codeOrName).then(({title = ''}) => {
-        spinner.succeed('获取完成')
-        console.log(chalk.bgGreenBright.bold(`${logSymbols.success} ${title} `))
-      })
+      crawlLeetcode(codeOrName)
+        .then(({title = '', url = ''}) => {
+          spinner.succeed('获取完成')
+          url && console.log(chalk.redBright(url))
+          console.log(chalk.bgGreenBright.bold(`${logSymbols.success} ${title} `))
+        }, (err) => {
+          spinner.fail('获取失败')
+        })
     })
 }

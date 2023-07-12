@@ -1,6 +1,7 @@
 import {Builder, By, until} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import saveCode from './save-code.js'
+
 import('chromedriver')
 
 export default async function crawlLeetcode(codeOrName) {
@@ -52,10 +53,12 @@ export default async function crawlLeetcode(codeOrName) {
     const codeId = title.split('.')[0]
 
     // save code file
-    const data = {title, desc, code, codeId}
+    const data = {title, desc, code, codeId, url: href}
     saveCode(data)
 
     return data
+  } catch (e) {
+    throw e
   } finally {
     await driver.quit()
   }
