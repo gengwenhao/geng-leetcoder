@@ -1,6 +1,6 @@
 {
   "name": "geng-leetcoder",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "小耿用来辅助刷题的工具",
   "main": "index.js",
   "scripts": {

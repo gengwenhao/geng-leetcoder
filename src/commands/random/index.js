@@ -79,8 +79,8 @@ export default function (program) {
   program
     .command('random')
     .description('随机获取代码')
-    .option('-t, --tag <string>', '随机获取练习题目')
-    .option('-l, --level <string>', '难度')
+    .option('-t, --tag <string>', '标签')
+    .option('-l, --level <string>', '难度', 'medium')
     .action((options) => {
       const n = Math.floor(Math.random() * 100)
       let codeName = '&search=' + n

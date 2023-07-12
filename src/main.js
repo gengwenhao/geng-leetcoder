@@ -4,7 +4,7 @@ import commands from './commands/index.js'
 
 program
   .name('小耿 leetcode 辅助刷题CLI工具')
-  .version('0.1.4')
+  .version('0.1.5')
 
 // mount commands
 Object
