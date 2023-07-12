@@ -7,7 +7,8 @@ const excludes = [
   '贡献者',
   '相关企业',
   '相关标签',
-  '显示提示'
+  '显示提示',
+  '相似题目'
 ]
 
 function saveCode({title, desc, code, codeId = 'spe'}) {
