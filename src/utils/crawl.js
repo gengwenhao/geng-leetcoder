@@ -12,7 +12,7 @@ export default async function crawlLeetcode(codeOrName, screenshoot = false) {
   // 配置 selenium
   const options = new chrome.Options()
   options.excludeSwitches('enable-logging')
-  options.addArguments('--window-size=1920,1080')
+  options.addArguments('--window-size=1200,2080')
   options.addArguments('--ignore-certificate-errors')
   options.addArguments('--allow-running-insecure-content')
   const ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
