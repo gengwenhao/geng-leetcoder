@@ -8,10 +8,11 @@ const excludes = [
   '相关企业',
   '相关标签',
   '显示提示',
-  '相似题目'
+  '相似题目',
+  '©'
 ]
 
-export default function saveCode({title, desc, code, codeId = 'spe'}) {
+export default function saveCode({title, url, desc, code, codeId = 'spe'}) {
   const dirName = `exercise${codeId}`
   const fileName = `main.js`
   const explain = desc
@@ -20,8 +21,7 @@ export default function saveCode({title, desc, code, codeId = 'spe'}) {
     .map(line => '// ' + line)
     .join('\n')
 
-  // const content = `// ${title}\n${explain}\n\n${code}`
-  const content = `${explain}\n\n`
+  const content = `${explain}\n// ${url}\n\n${code}`
 
   try {
     fs.mkdirSync(dirName)
